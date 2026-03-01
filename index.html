@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosmic Flow | The Creative Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+   <header>
+    <div class="brand-container">
+        <div class="logo">
+            <img src="kosmiclogo.png" alt="Kosmic Flow Logo">
+        </div>
+        <div class="brand-name impact-title">KOSMIC FLOW</div>
+    </div>
+    
+   <div class="theme-control">
+    <button id="theme-toggle" class="theme-action-btn">
+        <span id="theme-text">DARK</span>
+        <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+</div>
+
+    <nav>
+        <a href="#">Home</a><a>|</a>
+        <a href="#work">Services</a><a>|</a>
+        <a href="#why-us">Why Us</a><a>|</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="main-quote-box">
+                <p>“ Every brand has a story.</p>
+                <p>We shape it into Cinema Worth Watching ”</p>
+            </div>
+        </section>
+
+        <section class="visual-impact-section">
+            <div class="impact-container">
+                <img src="image.png" alt="Cinematic Storytelling" class="impact-img">
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="label-pill">AI Brand Films</div>
+            <div class="reel-container">
+                <div class="reel-track">
+                    <div class="reel-card"><video src="kalyan.mp4" muted loop playsinline></video></div>
+                    <div class="reel-card"><video src="luxera.mp4" muted loop playsinline></video></div>
+                    <div class="reel-card"><video src="maggi.mp4" muted loop playsinline></video></div>
+                    <div class="reel-card"><video src="meta.mp4" muted loop playsinline></video></div>
+                    <div class="reel-card"><video src="nescafe.mp4" muted loop playsinline></video></div>
+                    <div class="reel-card"><video src="banana.mp4" muted loop playsinline></video></div>
+                    
+                </div>
+            </div>
+            <p class="swipe-hint">← Swipe to see more →</p>
+        </section>
+
+        <section class="section philosophy-bg" id="why-us">
+            <div class="label-pill">Why We Exist</div>
+            <div class="philosophy-content">
+                <p class="serif-text">We believe every brand has a story — and how it’s told shapes how it’s remembered.</p>
+                <div class="impact-box">
+                    <p>TOO MUCH BRAND CONTENT TODAY IS BUILT FOR SPEED AND VISIBILITY, NOT INTENTION.</p>
+                    <p>IT FILLS SCREENS, BUT RARELY LEAVES A MARK.</p>
+                </div>
+                <p class="serif-text italic">Kosmic Flow exists to bring cinematic thinking back into brand storytelling — to shape stories with care, clarity, and purpose, so they’re worth watching and worth remembering.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-gradient-box">
+                <h3>Let's Talk Stories</h3>
+                <p>If you have a story to tell, we’d love to craft it.</p>
+            </div>
+        </section>
+    </main>
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <p class="footer-label"><i class="fas fa-phone-alt"></i> Call</p>
+            <p><a href="tel:+919902575721">+91 9902575721</a></p>
+        </div>
+        <div class="footer-col">
+            <p class="footer-label"><i class="fas fa-envelope"></i> Email</p>
+            <p><a href="mailto:spotlightstudios@gmail.com">spotlightstudios@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+            <p class="footer-label">FOLLOW US</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/kosmicflow.in" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.linkedin.com/company/kosmicflow-com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-logo-container">
+        <img src="kosmiclogo.png" alt="Kosmic Flow" class="footer-logo-img">
+    </div>
+    <h2 class="footer-bottom-text">WE'RE DESIGNING THE FUTURE</h2>
+    <p class="footer-site-link">kosmicflow.com</p>
+</footer>
+
+    <div class="reel-modal" id="reelModal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <video id="modalVideo" autoplay controls></video>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

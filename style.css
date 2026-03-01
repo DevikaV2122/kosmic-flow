@@ -1,0 +1,268 @@
+:root {
+    /* Default: LIGHT MODE */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --pill-bg: #000000; 
+    --pill-text: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --modal-bg: rgba(255, 255, 255, 0.98);
+    --sub-text: #333333;
+    --gray: #888888;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-impact: 'Impact', 'Charcoal', sans-serif;
+}
+
+body.dark-mode {
+    /* DARK MODE */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --header-bg: rgba(0, 0, 0, 0.95);
+    --pill-bg: #ffffff; 
+    --pill-text: #000000;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --modal-bg: rgba(0, 0, 0, 0.95);
+    --sub-text: #e0e0e0;
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body { 
+    background: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: var(--font-body); 
+    overflow-x: hidden; 
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+header {
+    position: fixed; width: 100%; top: 0;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px 0; background: var(--header-bg);
+    backdrop-filter: blur(15px); z-index: 1000; gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-container { display: flex; align-items: center; gap: 20px; }
+.logo img { height: 100px; width: auto; }
+.impact-title { font-family: var(--font-impact); font-size: 48px; letter-spacing: 2px; color: var(--text-color); }
+
+nav { background: var(--pill-bg); padding: 10px 35px; border-radius: 50px; display: flex; gap: 15px; }
+nav a { color: var(--pill-text); text-decoration: none; font-size: 15px; font-weight: 800; }
+
+/* =========================
+   SPACING FIX (TOUCHING SECTIONS)
+   ========================= */
+.main-container { padding-top: 280px; }
+
+.hero { 
+    padding: 60px 8% 100px; /* More bottom padding to prevent touching */
+    display: flex; 
+    justify-content: center; 
+}
+
+.main-quote-box { 
+    background: var(--pill-bg); 
+    color: var(--pill-text); 
+    padding: 60px 45px; 
+    border-radius: 30px; 
+    text-align: center; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    font-family: var(--font-heading); 
+    font-size: clamp(24px, 5vw, 38px); 
+    font-style: italic; 
+}
+
+.visual-impact-section { 
+    padding: 60px 8%; /* Top and bottom padding for the image section */
+    display: flex; 
+    justify-content: center; 
+}
+
+.impact-container {
+    position: relative; 
+    width: 100%; 
+    max-width: 1100px;
+    height: 500px; 
+    border-radius: 30px; 
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.impact-img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    filter: grayscale(100%) brightness(0.8); 
+}
+
+/* =========================
+   REELS & WHY US
+   ========================= */
+.section { padding: 80px 8%; text-align: center; scroll-margin-top: 280px; }
+
+.label-pill {
+    background: var(--pill-bg); 
+    padding: 12px 45px; border-radius: 50px;
+    display: inline-block; font-size: 20px; font-weight: 900; 
+    color: var(--pill-text);
+    text-transform: uppercase; margin-bottom: 30px;
+}
+
+.serif-text { font-family: var(--font-heading); font-size: 22px; line-height: 1.6; color: var(--sub-text); margin: 0 auto; max-width: 800px; }
+
+.impact-box { border-top: 2px solid var(--text-color); border-bottom: 2px solid var(--text-color); padding: 35px 0; margin: 45px auto; max-width: 750px; }
+.impact-box p { font-size: 18px; color: var(--text-color); font-weight: 700; letter-spacing: 1px; }
+
+.reel-container { 
+    width: 100%; 
+    overflow-x: auto; /* Essential: Allows horizontal swiping */
+    padding: 20px 0; 
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -webkit-overflow-scrolling: touch; /* Ensures smooth swiping on mobile */
+}
+
+.reel-container::-webkit-scrollbar { 
+    display: none; /* Hides scrollbar in Chrome/Safari */
+}
+.reel-track { display: flex; gap: 20px; width: max-content; padding: 0 8%; }
+.reel-card { width: 260px; height: 460px; border-radius: 18px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; }
+.reel-card video { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================
+   RESTORED CTA SECTION (LET'S TALK STORIES)
+   ========================= */
+.cta-section { 
+    padding: 100px 8%; 
+    text-align: center; 
+}
+
+.cta-gradient-box { 
+    background: var(--pill-bg); 
+    color: var(--pill-text);
+    padding: 60px 20px; 
+    border-radius: 30px; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    transition: background 0.4s ease;
+}
+
+.cta-gradient-box h3 { 
+    font-family: var(--font-heading); 
+    font-size: 32px; 
+    font-weight: 800; 
+    margin-bottom: 15px;
+}
+
+.cta-gradient-box p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* =========================
+   FOOTER (VERTICAL SOCIALS)
+   ========================= */
+footer { 
+    padding: 100px 8% 40px; 
+    text-align: center; 
+    border-top: 1px solid var(--border-color); 
+}
+
+.footer-grid { display: flex; justify-content: space-around; margin-bottom: 60px; flex-wrap: wrap; gap: 40px; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-label { font-weight: bold; margin-bottom: 20px; color: var(--text-color); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+
+.footer-col p, .footer-col a { color: var(--text-color); text-decoration: none; font-size: 16px; transition: 0.3s; }
+
+.social-links { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.social-links a {
+    background: var(--pill-bg); color: var(--pill-text);
+    padding: 10px 25px; border-radius: 30px; font-size: 14px;
+    width: 160px; text-align: center; font-weight: bold;
+}
+
+.footer-logo-img { height: 90px; margin-bottom: 25px; }
+.footer-bottom-text { letter-spacing: 6px; font-size: 22px; font-weight: 900; margin-top: 20px; }
+
+/* =========================
+   FLOATING THEME BUTTON
+   ========================= */
+.theme-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.theme-action-btn {
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    border: 2px solid var(--border-color);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MODAL
+   ========================= */
+/* =========================
+   REEL MODAL - PC & MOBILE OPTIMIZED
+   ========================= */
+.reel-modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0, 0, 0, 0.95); /* Deep dark backdrop */
+    z-index: 9999; 
+    justify-content: center; 
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+/* This forces the video to look like a phone reel on PC */
+.reel-modal video { 
+    height: 90vh; /* Takes up 90% of screen height */
+    aspect-ratio: 9/16; /* Forces vertical phone ratio */
+    background: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover; /* Ensures video fills the frame without gaps */
+}
+
+.close-modal { 
+    position: absolute; 
+    top: 30px; 
+    right: 40px; 
+    font-size: 50px; 
+    color: var(--text-color); 
+    cursor: pointer; 
+    z-index: 10000;
+    transition: transform 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg) scale(1.2);
+}
+
+/* Responsive adjustment for small laptops */
+@media (max-height: 800px) {
+    .reel-modal video {
+        height: 85vh;
+    }
+}
