@@ -266,53 +266,61 @@ footer {
         height: 85vh;
     }
 }
-/* =========================
-   MOBILE OPTIMIZATION (THE FINAL FIX)
-   ========================= */
+/* ============================================================
+   MOBILE OPTIMIZATION (THE ULTIMATE OVERRIDE)
+   ============================================================ */
 @media screen and (max-width: 768px) {
-    header {
-        padding: 10px 0;
-        gap: 5px;
-    }
-
-    .brand-container {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .logo img { height: 50px !important; }
-    
-    .impact-title { 
-        font-size: 24px !important; 
-        letter-spacing: 1px; 
-    }
-
-    /* THIS IS THE CRITICAL CHANGE: It pulls the button out of the navigation bar */
-    .theme-control {
+    /* 1. Header Cleanup - Remove the button from the top flow */
+    header .theme-control {
         position: fixed !important;
-        bottom: 30px !important;
+        bottom: 25px !important;
         right: 20px !important;
-        top: auto !important; /* This breaks it away from the top header */
+        top: auto !important;
+        left: auto !important;
+        width: auto !important;
         z-index: 9999 !important;
     }
 
-    .theme-action-btn {
-        padding: 10px 18px !important;
-        font-size: 10px !important;
-        background: var(--pill-bg) !important;
+    /* 2. Style the button so it looks like a floating toggle */
+    header .theme-action-btn {
+        background-color: var(--pill-bg) !important;
         color: var(--pill-text) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    /* This cleans up your navigation pill */
-    nav {
-        padding: 8px 15px !important;
+        padding: 12px 20px !important;
+        border-radius: 50px !important;
+        font-size: 10px !important;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+        display: flex !important;
+        align-items: center !important;
         gap: 8px !important;
-        width: 90% !important;
-        justify-content: center !important;
+        border: 1px solid var(--border-color) !important;
     }
 
-    nav a { font-size: 11px !important; }
+    /* 3. Navigation - Now it has room to breathe */
+    header nav {
+        width: 90% !important;
+        padding: 10px 15px !important;
+        gap: 10px !important;
+        justify-content: center !important;
+        margin-top: 5px !important;
+    }
 
-    .main-container { padding-top: 180px !important; }
+    header nav a {
+        font-size: 11px !important;
+        font-weight: 800 !important;
+    }
+
+    /* 4. Branding Scaling */
+    .brand-container {
+        flex-direction: column !important;
+        gap: 5px !important;
+    }
+
+    .logo img { height: 50px !important; }
+    
+    .impact-title { 
+        font-size: 26px !important; 
+        letter-spacing: 1px !important; 
+    }
+
+    .main-container { padding-top: 190px !important; }
 }
