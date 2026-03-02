@@ -5,12 +5,13 @@ const body = document.body;
 
 // Function to sync the button text and icon with the current mode
 function updateThemeUI() {
-    if (body.classList.contains('dark-mode')) {
-        themeText.innerText = "LIGHT";
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-    } else {
+    // If body has light-mode, show "DARK" option. Otherwise (Default Dark), show "LIGHT".
+    if (body.classList.contains('light-mode')) {
         themeText.innerText = "DARK";
         themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        themeText.innerText = "LIGHT";
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 }
 
@@ -28,8 +29,10 @@ themeToggle.addEventListener('click', () => {
 
 // Check Storage on Load
 window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
+    // If the user previously saved 'light', add the light-mode class.
+    // If they saved 'dark' or nothing at all, it stays in the default Dark Mode.
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
     }
     updateThemeUI();
 });
