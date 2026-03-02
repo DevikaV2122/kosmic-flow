@@ -1,4 +1,5 @@
 :root {
+    /* Default: DARK MODE */
     --bg-color: #000000;
     --text-color: #ffffff;
     --header-bg: rgba(0, 0, 0, 0.95);
@@ -85,7 +86,7 @@ nav a {
 
 /* MAIN OFFSET FIX */
 main {
-    margin-top: 170px;
+    margin-top: 180px; /* Space for the fixed header */
 }
 
 /* ================= HERO ================= */
@@ -272,9 +273,9 @@ footer {
 /* ================= THEME BUTTON ================= */
 
 .theme-control {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+    position: fixed !important;
+    bottom: 30px;
+    right: 30px;
     z-index: 2000;
 }
 
@@ -320,62 +321,57 @@ footer {
 }
 
 /* ============================================================
-   THE ULTIMATE MOBILE REPAIR (HEADER, IMAGE, & BUTTON)
+   MOBILE OPTIMIZATION (THE ABSOLUTE FINAL REPAIR)
    ============================================================ */
 @media screen and (max-width: 768px) {
-    /* 1. Reset the Header to be compact and clean */
+    /* 1. Header Logic - Stacking for space */
     header {
         padding: 10px 0 !important;
-        height: auto !important;
     }
 
-    .brand-container {
-        gap: 4px !important;
-    }
-    
-    .logo img { height: 45px !important; }
-    
-    .impact-title { 
-        font-size: 20px !important; 
-        letter-spacing: 1px !important; 
+    .logo img {
+        height: 50px !important;
     }
 
-    /* 2. Fix the Navigation Pill so it doesn't crash */
+    .impact-title {
+        font-size: 22px !important;
+    }
+
+    /* 2. Navigation - No more overlapping */
     nav {
-        margin-top: 8px !important;
+        margin-top: 10px !important;
         padding: 6px 15px !important;
         gap: 10px !important;
         width: 90% !important;
         justify-content: center !important;
     }
 
-    nav a { font-size: 11px !important; }
+    nav a {
+        font-size: 11px !important;
+    }
 
-    /* 3. THE "STUPID BUTTON" FIX: Teleport it to the bottom-right corner */
-    /* This physically moves it away from the header entirely */
+    /* 3. THE MAGIC FIX: Teleport the button to the bottom corner */
     .theme-control {
         position: fixed !important;
         bottom: 25px !important;
         right: 20px !important;
-        top: auto !important; /* Forces it out of the top flow */
+        top: auto !important; /* This pulls it out of the header forever */
         z-index: 9999 !important;
     }
 
     .theme-action-btn {
-        padding: 10px 18px !important;
+        padding: 12px 20px !important;
         font-size: 10px !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
-        border-radius: 50px !important;
     }
 
-    /* 4. THE IMAGE & MARGIN REPAIR */
-    /* This brings your cinematic image back up to the top */
+    /* 4. CONTENT & IMAGE REPAIR */
     main {
-        margin-top: 140px !important; /* Reduced to match the slimmer header */
+        margin-top: 150px !important; /* Brings content back into view */
     }
 
     .impact-container {
-        height: 280px !important; /* Proper mobile height */
+        height: 250px !important; /* Mobile height for your cinematic image */
         width: 95% !important;
         margin: 0 auto !important;
     }
