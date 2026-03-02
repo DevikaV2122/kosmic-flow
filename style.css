@@ -1,5 +1,4 @@
 :root {
-    /* Default: NOW DARK MODE */
     --bg-color: #000000;
     --text-color: #ffffff;
     --header-bg: rgba(0, 0, 0, 0.95);
@@ -8,15 +7,13 @@
     --border-color: rgba(255, 255, 255, 0.2);
     --modal-bg: rgba(0, 0, 0, 0.95);
     --sub-text: #e0e0e0;
-    --gray: #888888;
-    
+
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     --font-impact: 'Impact', 'Charcoal', sans-serif;
 }
 
 body.light-mode {
-    /* LIGHT MODE (Rename the class from .dark-mode to .light-mode) */
     --bg-color: #ffffff;
     --text-color: #000000;
     --header-bg: rgba(255, 255, 255, 0.95);
@@ -27,175 +24,257 @@ body.light-mode {
     --sub-text: #333333;
 }
 
-/* =========================
-   BASE STYLES
-   ========================= */
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-body { 
-    background: var(--bg-color); 
-    color: var(--text-color); 
-    font-family: var(--font-body); 
-    overflow-x: hidden; 
-    transition: background 0.5s ease, color 0.5s ease;
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    transition: 0.4s ease;
 }
+
+/* ================= HEADER ================= */
 
 header {
-    position: fixed; width: 100%; top: 0;
-    display: flex; flex-direction: column; align-items: center;
-    padding: 20px 0; background: var(--header-bg);
-    backdrop-filter: blur(15px); z-index: 1000; gap: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    text-align: center;
 }
 
-.brand-container { display: flex; align-items: center; gap: 20px; }
-.logo img { height: 100px; width: auto; }
-.impact-title { font-family: var(--font-impact); font-size: 48px; letter-spacing: 2px; color: var(--text-color); }
-
-nav { background: var(--pill-bg); padding: 10px 35px; border-radius: 50px; display: flex; gap: 15px; }
-nav a { color: var(--pill-text); text-decoration: none; font-size: 15px; font-weight: 800; }
-
-/* =========================
-   SPACING FIX (TOUCHING SECTIONS)
-   ========================= */
-.main-container { padding-top: 280px; }
-
-.hero { 
-    padding: 60px 8% 100px; /* More bottom padding to prevent touching */
-    display: flex; 
-    justify-content: center; 
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
-.main-quote-box { 
-    background: var(--pill-bg); 
-    color: var(--pill-text); 
-    padding: 60px 45px; 
-    border-radius: 30px; 
-    text-align: center; 
-    max-width: 900px; 
-    margin: 0 auto; 
-    font-family: var(--font-heading); 
-    font-size: clamp(24px, 5vw, 38px); 
-    font-style: italic; 
+.logo img {
+    height: 70px;
 }
 
-.visual-impact-section { 
-    padding: 60px 8%; /* Top and bottom padding for the image section */
-    display: flex; 
-    justify-content: center; 
+.impact-title {
+    font-family: var(--font-impact);
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+nav {
+    margin-top: 12px;
+    background: var(--pill-bg);
+    padding: 8px 25px;
+    border-radius: 50px;
+    display: inline-flex;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--pill-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* MAIN OFFSET FIX */
+main {
+    margin-top: 170px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    padding: 60px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-quote-box {
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    padding: 50px 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 850px;
+    font-family: var(--font-heading);
+    font-size: clamp(22px, 4vw, 34px);
+    font-style: italic;
+}
+
+/* ================= IMAGE SECTION ================= */
+
+.visual-impact-section {
+    padding: 60px 8%;
+    display: flex;
+    justify-content: center;
 }
 
 .impact-container {
-    position: relative; 
-    width: 100%; 
+    width: 100%;
     max-width: 1100px;
-    height: 500px; 
-    border-radius: 30px; 
+    height: 480px;
+    border-radius: 25px;
     overflow: hidden;
     border: 1px solid var(--border-color);
 }
 
-.impact-img { 
-    width: 100%; height: 100%; object-fit: cover; 
-    filter: grayscale(100%) brightness(0.8); 
+.impact-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.85);
 }
 
-/* =========================
-   REELS & WHY US
-   ========================= */
-.section { padding: 80px 8%; text-align: center; scroll-margin-top: 280px; }
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 80px 8%;
+    text-align: center;
+}
 
 .label-pill {
-    background: var(--pill-bg); 
-    padding: 12px 45px; border-radius: 50px;
-    display: inline-block; font-size: 20px; font-weight: 900; 
-    color: var(--pill-text);
-    text-transform: uppercase; margin-bottom: 30px;
-}
-
-.serif-text { font-family: var(--font-heading); font-size: 22px; line-height: 1.6; color: var(--sub-text); margin: 0 auto; max-width: 800px; }
-
-.impact-box { border-top: 2px solid var(--text-color); border-bottom: 2px solid var(--text-color); padding: 35px 0; margin: 45px auto; max-width: 750px; }
-.impact-box p { font-size: 18px; color: var(--text-color); font-weight: 700; letter-spacing: 1px; }
-
-.reel-container { 
-    width: 100%; 
-    overflow-x: auto; /* Essential: Allows horizontal swiping */
-    padding: 20px 0; 
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
-    -webkit-overflow-scrolling: touch; /* Ensures smooth swiping on mobile */
-}
-
-.reel-container::-webkit-scrollbar { 
-    display: none; /* Hides scrollbar in Chrome/Safari */
-}
-.reel-track { display: flex; gap: 20px; width: max-content; padding: 0 8%; }
-.reel-card { width: 260px; height: 460px; border-radius: 18px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; }
-.reel-card video { width: 100%; height: 100%; object-fit: cover; }
-
-/* =========================
-   RESTORED CTA SECTION (LET'S TALK STORIES)
-   ========================= */
-.cta-section { 
-    padding: 100px 8%; 
-    text-align: center; 
-}
-
-.cta-gradient-box { 
-    background: var(--pill-bg); 
-    color: var(--pill-text);
-    padding: 60px 20px; 
-    border-radius: 30px; 
-    max-width: 900px; 
-    margin: 0 auto; 
-    transition: background 0.4s ease;
-}
-
-.cta-gradient-box h3 { 
-    font-family: var(--font-heading); 
-    font-size: 32px; 
-    font-weight: 800; 
-    margin-bottom: 15px;
-}
-
-.cta-gradient-box p {
+    background: var(--pill-bg);
+    padding: 10px 35px;
+    border-radius: 50px;
     font-size: 18px;
-    opacity: 0.9;
+    font-weight: 900;
+    color: var(--pill-text);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: inline-block;
 }
 
-/* =========================
-   FOOTER (VERTICAL SOCIALS)
-   ========================= */
-footer { 
-    padding: 100px 8% 40px; 
-    text-align: center; 
-    border-top: 1px solid var(--border-color); 
+.serif-text {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--sub-text);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.footer-grid { display: flex; justify-content: space-around; margin-bottom: 60px; flex-wrap: wrap; gap: 40px; }
-.footer-col { flex: 1; min-width: 250px; }
-.footer-label { font-weight: bold; margin-bottom: 20px; color: var(--text-color); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+.impact-box {
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    padding: 30px 0;
+    margin: 40px auto;
+    max-width: 750px;
+}
 
-.footer-col p, .footer-col a { color: var(--text-color); text-decoration: none; font-size: 16px; transition: 0.3s; }
+.impact-box p {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-.social-links { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+/* ================= REELS ================= */
+
+.reel-container {
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.reel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.reel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 0 8%;
+}
+
+.reel-card {
+    width: 250px;
+    height: 450px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.reel-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= CTA ================= */
+
+.cta-section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.cta-gradient-box {
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    padding: 50px 20px;
+    border-radius: 25px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 90px 8% 40px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col {
+    min-width: 220px;
+}
+
+.footer-col a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
 .social-links a {
-    background: var(--pill-bg); color: var(--pill-text);
-    padding: 10px 25px; border-radius: 30px; font-size: 14px;
-    width: 160px; text-align: center; font-weight: bold;
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
 }
 
-.footer-logo-img { height: 90px; margin-bottom: 25px; }
-.footer-bottom-text { letter-spacing: 6px; font-size: 22px; font-weight: 900; margin-top: 20px; }
+.footer-logo-img {
+    height: 80px;
+    margin: 20px 0;
+}
 
-/* =========================
-   FLOATING THEME BUTTON
-   ========================= */
+/* ================= THEME BUTTON ================= */
+
 .theme-control {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     z-index: 2000;
 }
 
@@ -203,168 +282,81 @@ footer {
     background: var(--pill-bg);
     color: var(--pill-text);
     border: 2px solid var(--border-color);
-    padding: 12px 24px;
+    padding: 10px 18px;
     border-radius: 50px;
-    font-family: var(--font-body);
-    font-weight: 900;
     font-size: 11px;
-    letter-spacing: 2px;
+    font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    gap: 8px;
 }
 
-/* =========================
-   MODAL
-   ========================= */
-/* =========================
-   REEL MODAL - PC & MOBILE OPTIMIZED
-   ========================= */
-.reel-modal { 
-    display: none; 
-    position: fixed; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    background: rgba(0, 0, 0, 0.95); /* Deep dark backdrop */
-    z-index: 9999; 
-    justify-content: center; 
+/* ================= MODAL ================= */
+
+.reel-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
 }
 
-/* This forces the video to look like a phone reel on PC */
-.reel-modal video { 
-    height: 90vh; /* Takes up 90% of screen height */
-    aspect-ratio: 9/16; /* Forces vertical phone ratio */
-    background: #000;
+.reel-modal video {
+    height: 90vh;
+    aspect-ratio: 9/16;
     border-radius: 20px;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    object-fit: cover; /* Ensures video fills the frame without gaps */
+    object-fit: cover;
 }
 
-.close-modal { 
-    position: absolute; 
-    top: 30px; 
-    right: 40px; 
-    font-size: 50px; 
-    color: var(--text-color); 
-    cursor: pointer; 
-    z-index: 10000;
-    transition: transform 0.3s ease;
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    cursor: pointer;
 }
 
-.close-modal:hover {
-    transform: rotate(90deg) scale(1.2);
-}
+/* ================= MOBILE ================= */
 
-/* Responsive adjustment for small laptops */
-@media (max-height: 800px) {
-    .reel-modal video {
-        height: 85vh;
-    }
-}
-/* =========================
-   PERFECT MOBILE VERSION
-   ========================= */
 @media screen and (max-width: 768px) {
 
-    /* Fixed Header */
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .brand-container {
-        flex-direction: column;
-        gap: 6px;
+    main {
+        margin-top: 150px;
     }
 
     .logo img {
-        height: 55px !important;
+        height: 55px;
     }
 
     .impact-title {
-        font-size: 22px !important;
-        letter-spacing: 1px !important;
-        text-align: center;
+        font-size: 22px;
     }
 
-    /* Navigation */
     nav {
-        width: 92%;
-        padding: 8px 12px !important;
-        gap: 10px !important;
-        justify-content: center;
+        padding: 6px 15px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
     nav a {
-        font-size: 12px !important;
-    }
-
-    /* Hero spacing */
-    .hero {
-        padding: 40px 6% 60px;
-    }
-
-    .main-quote-box {
-        padding: 35px 20px;
-        font-size: 20px;
-        border-radius: 20px;
-    }
-
-    /* Image section */
-    .visual-impact-section {
-        padding: 40px 6%;
+        font-size: 12px;
     }
 
     .impact-container {
         height: auto;
-        aspect-ratio: 16 / 9;
-        border-radius: 20px;
+        aspect-ratio: 16/9;
     }
 
-    .impact-img {
-        object-fit: cover;
-    }
-
-    /* Section spacing */
-    .section {
-        padding: 60px 6%;
-    }
-
-    /* Reel cards */
     .reel-card {
-        width: 220px;
+        width: 210px;
         height: 380px;
     }
 
-    /* CTA */
-    .cta-section {
-        padding: 70px 6%;
-    }
-
-    /* Footer */
-    footer {
-        padding: 70px 6% 30px;
-    }
-
-    /* Theme button */
     .theme-control {
-        position: static !important;
-        display: flex;
-        justify-content: center;
-        margin-top: 8px;
-    }
-
-    .theme-action-btn {
-        padding: 8px 18px;
-        font-size: 10px;
-        box-shadow: none;
+        bottom: 15px;
+        right: 15px;
     }
 }
