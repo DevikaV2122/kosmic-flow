@@ -271,12 +271,12 @@ footer {
    ========================= */
 @media screen and (max-width: 768px) {
 
-    /* Header becomes compact but stable */
+    /* Fixed Header */
     header {
-        position: sticky !important;
+        position: fixed;
         top: 0;
-        padding: 12px 0 !important;
-        gap: 8px !important;
+        width: 100%;
+        z-index: 1000;
     }
 
     .brand-container {
@@ -294,7 +294,7 @@ footer {
         text-align: center;
     }
 
-    /* Navigation Fix */
+    /* Navigation */
     nav {
         width: 92%;
         padding: 8px 12px !important;
@@ -318,7 +318,7 @@ footer {
         border-radius: 20px;
     }
 
-    /* Image section fix */
+    /* Image section */
     .visual-impact-section {
         padding: 40px 6%;
     }
@@ -338,25 +338,33 @@ footer {
         padding: 60px 6%;
     }
 
-    /* Reel cards slightly smaller */
+    /* Reel cards */
     .reel-card {
         width: 220px;
         height: 380px;
     }
 
-    /* CTA spacing */
+    /* CTA */
     .cta-section {
         padding: 70px 6%;
     }
 
-    /* Footer spacing */
+    /* Footer */
     footer {
         padding: 70px 6% 30px;
     }
 
-    /* Theme button safe position */
+    /* Theme button */
     .theme-control {
-        bottom: 20px;
-        right: 15px;
+        position: static !important;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .theme-action-btn {
+        padding: 8px 18px;
+        font-size: 10px;
+        box-shadow: none;
     }
 }

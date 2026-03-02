@@ -71,3 +71,15 @@ window.onclick = (e) => {
  document.body.style.overflow = "auto";
 }
 } 
+function adjustMainSpacing() {
+    const header = document.querySelector("header");
+    const mainContainer = document.querySelector(".main-container");
+
+    if (!header || !mainContainer) return;
+
+    const headerHeight = header.offsetHeight;
+    mainContainer.style.marginTop = headerHeight + "px";
+}
+
+window.addEventListener("load", adjustMainSpacing);
+window.addEventListener("resize", adjustMainSpacing);
