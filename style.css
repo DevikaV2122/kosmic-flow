@@ -319,44 +319,64 @@ footer {
     cursor: pointer;
 }
 
-/* ================= MOBILE ================= */
-
+/* ============================================================
+   THE ULTIMATE MOBILE REPAIR (HEADER, IMAGE, & BUTTON)
+   ============================================================ */
 @media screen and (max-width: 768px) {
-
-    main {
-        margin-top: 150px;
+    /* 1. Reset the Header to be compact and clean */
+    header {
+        padding: 10px 0 !important;
+        height: auto !important;
     }
 
-    .logo img {
-        height: 55px;
+    .brand-container {
+        gap: 4px !important;
+    }
+    
+    .logo img { height: 45px !important; }
+    
+    .impact-title { 
+        font-size: 20px !important; 
+        letter-spacing: 1px !important; 
     }
 
-    .impact-title {
-        font-size: 22px;
-    }
-
+    /* 2. Fix the Navigation Pill so it doesn't crash */
     nav {
-        padding: 6px 15px;
-        gap: 10px;
-        flex-wrap: wrap;
+        margin-top: 8px !important;
+        padding: 6px 15px !important;
+        gap: 10px !important;
+        width: 90% !important;
+        justify-content: center !important;
     }
 
-    nav a {
-        font-size: 12px;
+    nav a { font-size: 11px !important; }
+
+    /* 3. THE "STUPID BUTTON" FIX: Teleport it to the bottom-right corner */
+    /* This physically moves it away from the header entirely */
+    .theme-control {
+        position: fixed !important;
+        bottom: 25px !important;
+        right: 20px !important;
+        top: auto !important; /* Forces it out of the top flow */
+        z-index: 9999 !important;
+    }
+
+    .theme-action-btn {
+        padding: 10px 18px !important;
+        font-size: 10px !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+        border-radius: 50px !important;
+    }
+
+    /* 4. THE IMAGE & MARGIN REPAIR */
+    /* This brings your cinematic image back up to the top */
+    main {
+        margin-top: 140px !important; /* Reduced to match the slimmer header */
     }
 
     .impact-container {
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-
-    .reel-card {
-        width: 210px;
-        height: 380px;
-    }
-
-    .theme-control {
-        bottom: 15px;
-        right: 15px;
+        height: 280px !important; /* Proper mobile height */
+        width: 95% !important;
+        margin: 0 auto !important;
     }
 }
