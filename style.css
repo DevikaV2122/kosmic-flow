@@ -267,7 +267,7 @@ footer {
     }
 }
 /* =========================
-   MOBILE OPTIMIZATION (FIX OVERLAPPING)
+   MOBILE OPTIMIZATION (THE FINAL FIX)
    ========================= */
 @media screen and (max-width: 768px) {
     header {
@@ -280,50 +280,39 @@ footer {
         gap: 5px;
     }
     
-    .logo img { height: 50px; }
+    .logo img { height: 50px !important; }
     
     .impact-title { 
-        font-size: 24px; 
+        font-size: 24px !important; 
         letter-spacing: 1px; 
     }
 
-    /* FIX: This moves the button out of the header to the bottom right */
+    /* THIS IS THE CRITICAL CHANGE: It pulls the button out of the navigation bar */
     .theme-control {
         position: fixed !important;
-        bottom: 25px !important;
+        bottom: 30px !important;
         right: 20px !important;
-        top: auto !important;
-        z-index: 9999;
+        top: auto !important; /* This breaks it away from the top header */
+        z-index: 9999 !important;
     }
 
     .theme-action-btn {
-        padding: 10px 15px;
-        font-size: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        padding: 10px 18px !important;
+        font-size: 10px !important;
+        background: var(--pill-bg) !important;
+        color: var(--pill-text) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
     }
 
-    /* FIX: This gives the nav links more space */
+    /* This cleans up your navigation pill */
     nav {
-        padding: 8px 15px;
-        gap: 8px;
-        width: 90%;
-        justify-content: center;
+        padding: 8px 15px !important;
+        gap: 8px !important;
+        width: 90% !important;
+        justify-content: center !important;
     }
 
-    nav a {
-        font-size: 11px;
-    }
+    nav a { font-size: 11px !important; }
 
-    .main-container { padding-top: 180px; }
-
-    .main-quote-box {
-        padding: 30px 20px;
-        font-size: 18px;
-        width: 95%;
-    }
-
-    .footer-grid {
-        flex-direction: column;
-        gap: 40px;
-    }
+    .main-container { padding-top: 180px !important; }
 }
