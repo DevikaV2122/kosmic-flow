@@ -266,70 +266,42 @@ footer {
         height: 85vh;
     }
 }
-/* =========================
-   PERFECT MOBILE FIX
-   ========================= */
 @media screen and (max-width: 768px) {
 
-    /* Fix header stacking properly */
+    /* Compact fixed header */
     header {
+        position: fixed !important;
         padding: 12px 0 !important;
-        gap: 10px !important;
-    }
-
-    .brand-container {
-        flex-direction: column !important;
         gap: 8px !important;
     }
 
-    /* Reduce main top spacing properly */
-    .main-container {
-        padding-top: 160px !important;
+    .logo img {
+        height: 55px !important;
     }
 
-    /* HERO SECTION FIX */
+    .impact-title {
+        font-size: 22px !important;
+        letter-spacing: 1px !important;
+    }
+
+    nav {
+        width: 92% !important;
+        padding: 8px 10px !important;
+        gap: 10px !important;
+    }
+
+    nav a {
+        font-size: 12px !important;
+    }
+
+    /* PERFECT SPACING FIX */
+    .main-container {
+        padding-top: 210px !important; 
+    }
+
+    /* Fix quote box clipping */
     .hero {
         padding: 40px 6% 60px !important;
     }
 
-    .main-quote-box {
-        padding: 35px 20px !important;
-        font-size: 20px !important;
-        border-radius: 20px !important;
-    }
-
-    /* IMAGE CROPPING FIX */
-    .visual-impact-section {
-        padding: 40px 6% !important;
-    }
-
-    .impact-container {
-        height: auto !important;   /* Remove fixed 500px height */
-        aspect-ratio: 16 / 9 !important; /* Keeps proper shape */
-    }
-
-    .impact-img {
-        object-fit: contain !important; /* Prevent aggressive crop */
-        filter: grayscale(100%) brightness(0.9);
-    }
-
-    /* Sections spacing fix */
-    .section {
-        padding: 60px 6% !important;
-    }
-
-    /* Reel cards slightly smaller for mobile */
-    .reel-card {
-        width: 220px !important;
-        height: 380px !important;
-    }
-
-    /* CTA spacing */
-    .cta-section {
-        padding: 70px 6% !important;
-    }
-
-    footer {
-        padding: 70px 6% 30px !important;
-    }
 }
