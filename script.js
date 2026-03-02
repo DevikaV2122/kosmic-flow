@@ -17,24 +17,22 @@ function updateThemeUI() {
 
 // Theme Toggle Logic
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
     
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
+    if (body.classList.contains('light-mode')) {
         localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
     }
     updateThemeUI();
 });
 
 // Check Storage on Load
 window.addEventListener('DOMContentLoaded', () => {
-    // If the user previously saved 'light', add the light-mode class.
-    // If they saved 'dark' or nothing at all, it stays in the default Dark Mode.
-    if (localStorage.getItem('theme') === 'light') {
-        body.classList.add('light-mode');
-    }
-    updateThemeUI();
+ if (localStorage.getItem('theme') === 'dark') {
+ body.classList.add('dark-mode');
+}
+ updateThemeUI();
 });
 const reels = document.querySelectorAll('.reel-card video');
 const modal = document.getElementById('reelModal');
@@ -42,34 +40,34 @@ const modalVideo = document.getElementById('modalVideo');
 const closeModal = document.getElementById('closeModal');
 
 reels.forEach(video => {
-    // Desktop hover play
-    video.addEventListener('mouseenter', () => video.play());
-    video.addEventListener('mouseleave', () => { 
-        video.pause(); 
-        video.currentTime = 0; 
-    });
-    
-    // The Click logic for "Reel Feel"
-    video.addEventListener('click', () => {
-        modal.style.display = "flex"; // Changed to flex for center alignment
-        modalVideo.src = video.src;
-        modalVideo.play();
-        document.body.style.overflow = "hidden"; // Stops background scrolling
-    });
+ // Desktop hover play
+ //  video.addEventListener('mouseenter', () => video.play());
+video.addEventListener('mouseleave', () => { 
+ video.pause(); 
+ video.currentTime = 0; 
+ });
+ 
+// The Click logic for "Reel Feel"
+ video.addEventListener('click', () => {
+     modal.style.display = "flex"; // Changed to flex for center alignment
+     modalVideo.src = video.src;
+     modalVideo.play();
+     document.body.style.overflow = "hidden"; // Stops background scrolling
+ });
 });
 
 closeModal.addEventListener('click', () => {
-    modal.style.display = "none";
-    modalVideo.pause();
-    modalVideo.src = "";
-    document.body.style.overflow = "auto"; // Restores scrolling
+modal.style.display = "none";
+ modalVideo.pause();
+modalVideo.src = "";
+document.body.style.overflow = "auto"; // Restores scrolling
 });
 
 // Close when clicking outside the video
 window.onclick = (e) => {
-    if (e.target == modal) {
-        modal.style.display = "none";
-        modalVideo.pause();
-        document.body.style.overflow = "auto";
-    }
+ if (e.target == modal) {
+ modal.style.display = "none";
+ modalVideo.pause();
+ document.body.style.overflow = "auto";
 }
+} 
