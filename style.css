@@ -266,3 +266,59 @@ footer {
         height: 85vh;
     }
 }
+/* =========================
+   MOBILE OPTIMIZATION (FIX OVERLAPPING)
+   ========================= */
+@media screen and (max-width: 768px) {
+    /* Shrink the massive header so it doesn't cover half the screen */
+    header {
+        padding: 10px 0;
+        gap: 8px;
+    }
+    
+    .logo img { height: 60px; }
+    
+    .impact-title { 
+        font-size: 28px; 
+        letter-spacing: 1px; 
+    }
+    /* Add this inside your existing @media (max-width: 768px) block */
+    .theme-control {
+        bottom: 20px; /* Moves it slightly for better thumb reach */
+        right: 20px;
+        transform: scale(0.85); /* Shrinks it slightly so it doesn't feel bulky */
+    }
+
+    /* If the button is inside the header, this ensures it doesn't overlap logo */
+    .theme-action-btn {
+        padding: 10px 18px;
+        font-size: 9px;
+    }
+
+    /* Reduce the padding top since the header is now smaller */
+    .main-container { padding-top: 180px; }
+
+    /* Fix the quote box from overlapping edges */
+    .main-quote-box {
+        padding: 40px 20px;
+        font-size: 20px;
+        width: 95%;
+    }
+
+    /* Prevent the footer columns from crashing into each other */
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    /* Fix image height on mobile */
+    .impact-container {
+        height: 300px;
+    }
+}
