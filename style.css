@@ -282,14 +282,26 @@ footer {
         font-size: 28px; 
         letter-spacing: 1px; 
     }
+    nav {
+    padding: 8px 15px;      /* Slimmer padding */
+    gap: 8px;               /* Smaller gaps */
+    flex-wrap: wrap;        /* Allows links to go to a second line if needed */
+    justify-content: center;
+}
+
+nav a {
+    font-size: 12px;        /* Smaller font for mobile links */
+}
     /* Add this inside your existing @media (max-width: 768px) block */
- .theme-control {
-        position: fixed; /* Stays in one spot while scrolling */
-        bottom: 25px;    /* 25px up from the bottom */
-        right: 20px;     /* 20px in from the right */
-        top: auto;       /* Important: overrides the header positioning */
-        z-index: 9999;   /* Ensures it stays above all other content */
-    }
+/* Change this section inside your mobile media query */
+.theme-control {
+    position: fixed !important; 
+    bottom: 20px !important;    /* Lowered slightly for mobile reach */
+    right: 20px !important;
+    top: auto !important;       /* This "breaks" it away from the header */
+    left: auto !important;
+    z-index: 9999 !important;
+}
 
     .theme-action-btn {
         padding: 12px 20px;
