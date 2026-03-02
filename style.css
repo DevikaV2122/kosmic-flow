@@ -266,13 +266,22 @@ footer {
         height: 85vh;
     }
 }
+/* =========================
+   PERFECT MOBILE VERSION
+   ========================= */
 @media screen and (max-width: 768px) {
 
-    /* Compact fixed header */
+    /* Header becomes compact but stable */
     header {
-        position: fixed !important;
+        position: sticky !important;
+        top: 0;
         padding: 12px 0 !important;
         gap: 8px !important;
+    }
+
+    .brand-container {
+        flex-direction: column;
+        gap: 6px;
     }
 
     .logo img {
@@ -282,26 +291,72 @@ footer {
     .impact-title {
         font-size: 22px !important;
         letter-spacing: 1px !important;
+        text-align: center;
     }
 
+    /* Navigation Fix */
     nav {
-        width: 92% !important;
-        padding: 8px 10px !important;
+        width: 92%;
+        padding: 8px 12px !important;
         gap: 10px !important;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     nav a {
         font-size: 12px !important;
     }
 
-    /* PERFECT SPACING FIX */
-    .main-container {
-        padding-top: 210px !important; 
-    }
-
-    /* Fix quote box clipping */
+    /* Hero spacing */
     .hero {
-        padding: 40px 6% 60px !important;
+        padding: 40px 6% 60px;
     }
 
+    .main-quote-box {
+        padding: 35px 20px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+
+    /* Image section fix */
+    .visual-impact-section {
+        padding: 40px 6%;
+    }
+
+    .impact-container {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+    }
+
+    .impact-img {
+        object-fit: cover;
+    }
+
+    /* Section spacing */
+    .section {
+        padding: 60px 6%;
+    }
+
+    /* Reel cards slightly smaller */
+    .reel-card {
+        width: 220px;
+        height: 380px;
+    }
+
+    /* CTA spacing */
+    .cta-section {
+        padding: 70px 6%;
+    }
+
+    /* Footer spacing */
+    footer {
+        padding: 70px 6% 30px;
+    }
+
+    /* Theme button safe position */
+    .theme-control {
+        bottom: 20px;
+        right: 15px;
+    }
 }
