@@ -270,70 +270,60 @@ footer {
    MOBILE OPTIMIZATION (FIX OVERLAPPING)
    ========================= */
 @media screen and (max-width: 768px) {
-    /* Shrink the massive header so it doesn't cover half the screen */
     header {
         padding: 10px 0;
-        gap: 8px;
+        gap: 5px;
+    }
+
+    .brand-container {
+        flex-direction: column;
+        gap: 5px;
     }
     
-    .logo img { height: 60px; }
+    .logo img { height: 50px; }
     
     .impact-title { 
-        font-size: 28px; 
+        font-size: 24px; 
         letter-spacing: 1px; 
     }
-    nav {
-    padding: 8px 15px;      /* Slimmer padding */
-    gap: 8px;               /* Smaller gaps */
-    flex-wrap: wrap;        /* Allows links to go to a second line if needed */
-    justify-content: center;
-}
 
-nav a {
-    font-size: 12px;        /* Smaller font for mobile links */
-}
-    /* Add this inside your existing @media (max-width: 768px) block */
-/* Change this section inside your mobile media query */
-.theme-control {
-    position: fixed !important; 
-    bottom: 20px !important;    /* Lowered slightly for mobile reach */
-    right: 20px !important;
-    top: auto !important;       /* This "breaks" it away from the header */
-    left: auto !important;
-    z-index: 9999 !important;
-}
-
-    .theme-action-btn {
-        padding: 12px 20px;
-        font-size: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Makes it pop on mobile */
-        border: 1px solid var(--border-color);
+    /* FIX: This moves the button out of the header to the bottom right */
+    .theme-control {
+        position: fixed !important;
+        bottom: 25px !important;
+        right: 20px !important;
+        top: auto !important;
+        z-index: 9999;
     }
 
-    /* Reduce the padding top since the header is now smaller */
+    .theme-action-btn {
+        padding: 10px 15px;
+        font-size: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* FIX: This gives the nav links more space */
+    nav {
+        padding: 8px 15px;
+        gap: 8px;
+        width: 90%;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
     .main-container { padding-top: 180px; }
 
-    /* Fix the quote box from overlapping edges */
     .main-quote-box {
-        padding: 40px 20px;
-        font-size: 20px;
+        padding: 30px 20px;
+        font-size: 18px;
         width: 95%;
     }
 
-    /* Prevent the footer columns from crashing into each other */
     .footer-grid {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 50px;
-    }
-
-    .footer-col {
-        width: 100%;
-    }
-
-    /* Fix image height on mobile */
-    .impact-container {
-        height: 300px;
+        gap: 40px;
     }
 }
