@@ -318,6 +318,8 @@ footer {
     right: 40px;
     font-size: 40px;
     cursor: pointer;
+    z-index: 10001 !important;
+    color: white;
 }
 
 /* ============================================================
